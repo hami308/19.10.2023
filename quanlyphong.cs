@@ -132,7 +132,17 @@ namespace GiaoDien_qlpks
 
         private void btcapnhap_Click(object sender, EventArgs e)
         {
-
+            int vesinhphong1= radioButton1.Checked ? 1 : 0;
+            int sophong =(int) cbchonphong.SelectedValue;
+            string query = $"UPDATE [dbo].[Table_SOPHONG] SET VESINHPHONG ='{vesinhphong1}' WHERE SOPHONG = '{sophong}' ";
+            DataProvider provider = new DataProvider();
+            provider.ExecuteQuery( query);
+            MessageBox.Show("Cập nhật thành công!","Thông báo");
+            loaiphong.Text = string.Empty;
+            trangthai.Text = string.Empty;
+            vesinhphong.Text = string.Empty;
+            radioButton1.Checked = false;
+            radioButton2.Checked = false;
         }
 
         private void quanlyphong_Load(object sender, EventArgs e)

@@ -44,18 +44,15 @@ namespace GiaoDien_qlpks
 
             if (!string.IsNullOrEmpty(tendangnhap) && !string.IsNullOrEmpty(matkhaucu) && !string.IsNullOrEmpty(matkhaumoi) && !string.IsNullOrEmpty(nhaplaimatkhau))
             {
-                // Kiểm tra mật khẩu cũ
                 DataProvider provider = new DataProvider();
                 if (provider.CheckLogin(tendangnhap, matkhaucu))
                 {
-                    // Mật khẩu cũ đúng, kiểm tra mật khẩu mới và nhập lại mật khẩu
                     if (matkhaumoi == nhaplaimatkhau)
                     {
-                        // Mật khẩu mới và nhập lại mật khẩu trùng khớp, cập nhật vào cơ sở dữ liệu
                         string query = $"UPDATE [dbo].[Table_USER] SET PASSWORD = '{matkhaumoi}' WHERE USERNAME = '{tendangnhap}'";
                         provider.ExecuteQuery(query);
                         MessageBox.Show("Cập nhật mật khẩu thành công!");
-                        // Thực hiện các hành động khác nếu cần
+                      
                     }
                     else
                     {

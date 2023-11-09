@@ -53,9 +53,9 @@
             label1.Font = new Font("Segoe UI", 17F, FontStyle.Regular, GraphicsUnit.Point);
             label1.Location = new Point(70, 3);
             label1.Name = "label1";
-            label1.Size = new Size(251, 31);
+            label1.Size = new Size(277, 31);
             label1.TabIndex = 0;
-            label1.Text = "Danh sách các dịch vụ :";
+            label1.Text = "Danh sách các sản phẩm :";
             // 
             // panel1
             // 
@@ -113,7 +113,6 @@
             panel3.Name = "panel3";
             panel3.Size = new Size(390, 72);
             panel3.TabIndex = 3;
-            panel3.Paint += panel3_Paint;
             // 
             // dongia
             // 

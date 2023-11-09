@@ -160,6 +160,7 @@
             cbloaiphong.Name = "cbloaiphong";
             cbloaiphong.Size = new Size(237, 31);
             cbloaiphong.TabIndex = 2;
+            cbloaiphong.SelectedIndexChanged += cbloaiphong_SelectedIndexChanged;
             // 
             // label6
             // 

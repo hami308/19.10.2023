@@ -38,9 +38,9 @@
             checkInToolStripMenuItem1 = new ToolStripMenuItem();
             checkOutToolStripMenuItem = new ToolStripMenuItem();
             QuanliphongToolStripMenuItem = new ToolStripMenuItem();
-            báoCáoToolStripMenuItem = new ToolStripMenuItem();
-            doanhThuToolStripMenuItem = new ToolStripMenuItem();
             dichvuToolStripMenuItem = new ToolStripMenuItem();
+            danhSáchCácDịchVụToolStripMenuItem = new ToolStripMenuItem();
+            đặtToolStripMenuItem = new ToolStripMenuItem();
             panel1.SuspendLayout();
             menuStrip1.SuspendLayout();
             SuspendLayout();
@@ -57,7 +57,7 @@
             // 
             // menuStrip1
             // 
-            menuStrip1.Items.AddRange(new ToolStripItem[] { TaikhoancanhanToolStripMenuItem, KhachhangToolStripMenuItem, QuanliphongToolStripMenuItem, báoCáoToolStripMenuItem, dichvuToolStripMenuItem });
+            menuStrip1.Items.AddRange(new ToolStripItem[] { TaikhoancanhanToolStripMenuItem, KhachhangToolStripMenuItem, QuanliphongToolStripMenuItem, dichvuToolStripMenuItem });
             menuStrip1.Location = new Point(0, 0);
             menuStrip1.Name = "menuStrip1";
             menuStrip1.Size = new Size(793, 33);
@@ -126,31 +126,29 @@
             QuanliphongToolStripMenuItem.Text = "Quản lý phòng";
             QuanliphongToolStripMenuItem.Click += QuanliphongToolStripMenuItem_Click;
             // 
-            // báoCáoToolStripMenuItem
-            // 
-            báoCáoToolStripMenuItem.BackColor = Color.FromArgb(255, 192, 192);
-            báoCáoToolStripMenuItem.DropDownItems.AddRange(new ToolStripItem[] { doanhThuToolStripMenuItem });
-            báoCáoToolStripMenuItem.Font = new Font("Segoe UI", 13F, FontStyle.Regular, GraphicsUnit.Point);
-            báoCáoToolStripMenuItem.Name = "báoCáoToolStripMenuItem";
-            báoCáoToolStripMenuItem.Size = new Size(87, 29);
-            báoCáoToolStripMenuItem.Text = "Báo cáo";
-            báoCáoToolStripMenuItem.Click += báoCáoToolStripMenuItem_Click;
-            // 
-            // doanhThuToolStripMenuItem
-            // 
-            doanhThuToolStripMenuItem.Name = "doanhThuToolStripMenuItem";
-            doanhThuToolStripMenuItem.Size = new Size(168, 30);
-            doanhThuToolStripMenuItem.Text = "Doanh thu";
-            doanhThuToolStripMenuItem.Click += doanhThuToolStripMenuItem_Click;
-            // 
             // dichvuToolStripMenuItem
             // 
-            dichvuToolStripMenuItem.BackColor = Color.LightCoral;
+            dichvuToolStripMenuItem.BackColor = Color.FromArgb(255, 192, 192);
+            dichvuToolStripMenuItem.DropDownItems.AddRange(new ToolStripItem[] { danhSáchCácDịchVụToolStripMenuItem, đặtToolStripMenuItem });
             dichvuToolStripMenuItem.Font = new Font("Segoe UI", 13F, FontStyle.Regular, GraphicsUnit.Point);
             dichvuToolStripMenuItem.Name = "dichvuToolStripMenuItem";
-            dichvuToolStripMenuItem.Size = new Size(114, 29);
-            dichvuToolStripMenuItem.Text = "Các dịch vụ";
+            dichvuToolStripMenuItem.Size = new Size(154, 29);
+            dichvuToolStripMenuItem.Text = "Dịch vụ ăn uống";
             dichvuToolStripMenuItem.Click += dichvuToolStripMenuItem_Click;
+            // 
+            // danhSáchCácDịchVụToolStripMenuItem
+            // 
+            danhSáchCácDịchVụToolStripMenuItem.Name = "danhSáchCácDịchVụToolStripMenuItem";
+            danhSáchCácDịchVụToolStripMenuItem.Size = new Size(279, 30);
+            danhSáchCácDịchVụToolStripMenuItem.Text = "Danh sách các sản phẩm";
+            danhSáchCácDịchVụToolStripMenuItem.Click += danhSáchCácDịchVụToolStripMenuItem_Click;
+            // 
+            // đặtToolStripMenuItem
+            // 
+            đặtToolStripMenuItem.Name = "đặtToolStripMenuItem";
+            đặtToolStripMenuItem.Size = new Size(279, 30);
+            đặtToolStripMenuItem.Text = "Đặt sản phẩm";
+            đặtToolStripMenuItem.Click += đặtToolStripMenuItem_Click;
             // 
             // Trangchu
             // 
@@ -181,8 +179,8 @@
         private ToolStripMenuItem checkInToolStripMenuItem1;
         private ToolStripMenuItem checkOutToolStripMenuItem;
         private ToolStripMenuItem QuanliphongToolStripMenuItem;
-        private ToolStripMenuItem báoCáoToolStripMenuItem;
-        private ToolStripMenuItem doanhThuToolStripMenuItem;
         private ToolStripMenuItem dichvuToolStripMenuItem;
+        private ToolStripMenuItem danhSáchCácDịchVụToolStripMenuItem;
+        private ToolStripMenuItem đặtToolStripMenuItem;
     }
 }

@@ -44,15 +44,15 @@ namespace GiaoDien_qlpks
 
         private void dataGridView1_CellClick(object sender, DataGridViewCellEventArgs e)
         {
-            if (e.RowIndex >= 0) // Đảm bảo chỉ số hàng hợp lệ được chọn
+            if (e.RowIndex >= 0) 
             {
-                DataGridViewRow row = dataGridView1.Rows[e.RowIndex]; // Lấy dữ liệu từ dòng đã chọn
+                DataGridViewRow row = dataGridView1.Rows[e.RowIndex]; 
                 tbmakhachhang.Text = row.Cells["MAKHACHHANG"].Value.ToString();
                 tbtenkhach.Text = row.Cells["TENKHACHHANG"].Value.ToString();
                 tbsđt.Text = row.Cells["SĐT"].Value.ToString();
                 tbcccd.Text = row.Cells["CCCD"].Value.ToString();
                 sophong.Text = row.Cells["SOPHONG"].Value.ToString();
-                // "Tên_Cột" là tên của cột mà bạn muốn lấy dữ liệu từ đó
+            
             }
         }
 
@@ -88,6 +88,14 @@ namespace GiaoDien_qlpks
 
         private void tbidphong_TextChanged(object sender, EventArgs e)
         {
+
+        }
+
+        private void button1_Click(object sender, EventArgs e)
+        {
+            string query = $"SELECT * FROM [dbo].[Table.KHACHHANG] WHERE SOPHONG='{tbsophong.Text}'";
+            DataProvider provider = new DataProvider();
+            dataGridView1.DataSource = provider.ExecuteQuery(query);
 
         }
     }

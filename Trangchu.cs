@@ -16,7 +16,7 @@ namespace GiaoDien_qlpks
         public Trangchu(string tendangnhap)
         {
             InitializeComponent();
-            this.tendangnhap= tendangnhap;  
+            this.tendangnhap = tendangnhap;
         }
 
         private void QuanliphongToolStripMenuItem_Click(object sender, EventArgs e)
@@ -79,9 +79,22 @@ namespace GiaoDien_qlpks
 
         private void dichvuToolStripMenuItem_Click(object sender, EventArgs e)
         {
+
+        }
+
+        private void danhSáchCácDịchVụToolStripMenuItem_Click(object sender, EventArgs e)
+        {
             Form Dichvu = new Dichvu();
             this.Hide();
             Dichvu.ShowDialog();
+            this.Show();
+        }
+
+        private void đặtToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            Form Datsanpham = new Datsanpham();
+            this.Hide();
+            Datsanpham.ShowDialog();
             this.Show();
         }
     }

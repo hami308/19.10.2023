@@ -29,7 +29,6 @@
         private void InitializeComponent()
         {
             panel1 = new Panel();
-            tbtenkhachhang = new TextBox();
             dataGridView1 = new DataGridView();
             button1 = new Button();
             chinhsua = new Button();
@@ -49,6 +48,7 @@
             panel6 = new Panel();
             tbcccd = new TextBox();
             label3 = new Label();
+            tbsophong = new TextBox();
             panel1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)dataGridView1).BeginInit();
             panel2.SuspendLayout();
@@ -62,22 +62,13 @@
             // panel1
             // 
             panel1.BackColor = Color.MistyRose;
-            panel1.Controls.Add(tbtenkhachhang);
+            panel1.Controls.Add(tbsophong);
             panel1.Controls.Add(dataGridView1);
             panel1.Controls.Add(button1);
             panel1.Location = new Point(12, 16);
             panel1.Name = "panel1";
             panel1.Size = new Size(404, 422);
             panel1.TabIndex = 0;
-            // 
-            // tbtenkhachhang
-            // 
-            tbtenkhachhang.Font = new Font("Segoe UI", 12F, FontStyle.Regular, GraphicsUnit.Point);
-            tbtenkhachhang.Location = new Point(3, 12);
-            tbtenkhachhang.Name = "tbtenkhachhang";
-            tbtenkhachhang.Size = new Size(317, 29);
-            tbtenkhachhang.TabIndex = 5;
-            tbtenkhachhang.TextChanged += tbtenkhachhang_TextChanged;
             // 
             // dataGridView1
             // 
@@ -94,22 +85,23 @@
             // 
             button1.BackColor = Color.FromArgb(255, 192, 192);
             button1.Font = new Font("Segoe UI", 12F, FontStyle.Bold, GraphicsUnit.Point);
-            button1.Location = new Point(326, 5);
+            button1.Location = new Point(241, 14);
             button1.Name = "button1";
             button1.Size = new Size(75, 41);
             button1.TabIndex = 1;
             button1.Text = "Tìm";
             button1.UseVisualStyleBackColor = false;
+            button1.Click += button1_Click;
             // 
             // chinhsua
             // 
             chinhsua.BackColor = Color.FromArgb(255, 128, 128);
             chinhsua.Font = new Font("Segoe UI", 12F, FontStyle.Bold, GraphicsUnit.Point);
-            chinhsua.Location = new Point(105, 12);
+            chinhsua.Location = new Point(140, 5);
             chinhsua.Name = "chinhsua";
-            chinhsua.Size = new Size(174, 42);
+            chinhsua.Size = new Size(100, 42);
             chinhsua.TabIndex = 1;
-            chinhsua.Text = "Chỉnh sửa thông tin";
+            chinhsua.Text = "Chỉnh sửa";
             chinhsua.UseVisualStyleBackColor = false;
             chinhsua.Click += chinhsua_Click;
             // 
@@ -266,6 +258,14 @@
             label3.TabIndex = 0;
             label3.Text = "CCCD :";
             // 
+            // tbsophong
+            // 
+            tbsophong.Font = new Font("Segoe UI", 15F, FontStyle.Regular, GraphicsUnit.Point);
+            tbsophong.Location = new Point(91, 17);
+            tbsophong.Name = "tbsophong";
+            tbsophong.Size = new Size(139, 34);
+            tbsophong.TabIndex = 5;
+            // 
             // danhsachkhachhang
             // 
             AutoScaleDimensions = new SizeF(7F, 15F);
@@ -317,7 +317,7 @@
         private Label label3;
         private Panel panel7;
         private Label label4;
-        private TextBox tbtenkhachhang;
         private TextBox sophong;
+        private TextBox tbsophong;
     }
 }
