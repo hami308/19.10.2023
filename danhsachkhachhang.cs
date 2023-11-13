@@ -44,15 +44,15 @@ namespace GiaoDien_qlpks
 
         private void dataGridView1_CellClick(object sender, DataGridViewCellEventArgs e)
         {
-            if (e.RowIndex >= 0) 
+            if (e.RowIndex >= 0)
             {
-                DataGridViewRow row = dataGridView1.Rows[e.RowIndex]; 
+                DataGridViewRow row = dataGridView1.Rows[e.RowIndex];
                 tbmakhachhang.Text = row.Cells["MAKHACHHANG"].Value.ToString();
                 tbtenkhach.Text = row.Cells["TENKHACHHANG"].Value.ToString();
                 tbsđt.Text = row.Cells["SĐT"].Value.ToString();
                 tbcccd.Text = row.Cells["CCCD"].Value.ToString();
                 sophong.Text = row.Cells["SOPHONG"].Value.ToString();
-            
+
             }
         }
 

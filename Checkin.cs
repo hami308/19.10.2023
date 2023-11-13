@@ -62,10 +62,8 @@ namespace GiaoDien_qlpks
                     int MaKhachHang = Convert.ToInt32(provider.ExecuteScalar(insertKhachHangQuery));
                     string ngayDatFormatted = ngaydat.Value.ToString("yyyy-MM-dd");
                     string ngayTraFormatted = ngaytra.Value.ToString("yyyy-MM-dd");
-                    string insertDatphongQuery = $"INSERT INTO [dbo].[Table_DATPHONG] (MAKHACHHANG, NGAYDAT, NGAYTRA) VALUES ('{MaKhachHang}', '{ngayDatFormatted}', '{ngayTraFormatted}')";
-
+                    string insertDatphongQuery = $"INSERT INTO [dbo].[Table_DATPHONG] (MAKHACHHANG, NGAYDAT, NGAYTRADUKIEN) VALUES ('{MaKhachHang}', '{ngayDatFormatted}', '{ngayTraFormatted}')";
                     provider.ExecuteQuery(insertDatphongQuery);
-
                     string updatetrangthai = $"UPDATE [dbo].[Table_SOPHONG] SET TRANGTHAI = 0 WHERE SOPHONG = '{sophong}'";
                     provider.ExecuteQuery(updatetrangthai);
 
@@ -91,14 +89,14 @@ namespace GiaoDien_qlpks
         {
             if (cbloaiphong.SelectedItem != null)
             {
-                    string? loaiphong = cbloaiphong.SelectedItem.ToString();
-                    string query = $"SELECT SOPHONG FROM [dbo].[Table_SOPHONG] WHERE IDLOAIPHONG  = '{loaiphong}' AND TRANGTHAI = 1";
-                    DataProvider provider = new DataProvider();
-                    DataTable dataTable = provider.ExecuteQuery(query);
-                    cbsophong.DataSource = dataTable;
-                    cbsophong.DisplayMember = "SOPHONG";
-                    cbsophong.ValueMember = "SOPHONG";
-       
+                string? loaiphong = cbloaiphong.SelectedItem.ToString();
+                string query = $"SELECT SOPHONG FROM [dbo].[Table_SOPHONG] WHERE IDLOAIPHONG  = '{loaiphong}' AND TRANGTHAI = 1";
+                DataProvider provider = new DataProvider();
+                DataTable dataTable = provider.ExecuteQuery(query);
+                cbsophong.DataSource = dataTable;
+                cbsophong.DisplayMember = "SOPHONG";
+                cbsophong.ValueMember = "SOPHONG";
+
             }
 
         }

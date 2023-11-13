@@ -29,6 +29,7 @@
         private void InitializeComponent()
         {
             panel1 = new Panel();
+            tbsophong = new TextBox();
             dataGridView1 = new DataGridView();
             button1 = new Button();
             chinhsua = new Button();
@@ -48,7 +49,7 @@
             panel6 = new Panel();
             tbcccd = new TextBox();
             label3 = new Label();
-            tbsophong = new TextBox();
+            label5 = new Label();
             panel1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)dataGridView1).BeginInit();
             panel2.SuspendLayout();
@@ -62,6 +63,7 @@
             // panel1
             // 
             panel1.BackColor = Color.MistyRose;
+            panel1.Controls.Add(label5);
             panel1.Controls.Add(tbsophong);
             panel1.Controls.Add(dataGridView1);
             panel1.Controls.Add(button1);
@@ -69,6 +71,14 @@
             panel1.Name = "panel1";
             panel1.Size = new Size(404, 422);
             panel1.TabIndex = 0;
+            // 
+            // tbsophong
+            // 
+            tbsophong.Font = new Font("Segoe UI", 15F, FontStyle.Regular, GraphicsUnit.Point);
+            tbsophong.Location = new Point(152, 18);
+            tbsophong.Name = "tbsophong";
+            tbsophong.Size = new Size(139, 34);
+            tbsophong.TabIndex = 5;
             // 
             // dataGridView1
             // 
@@ -85,7 +95,7 @@
             // 
             button1.BackColor = Color.FromArgb(255, 192, 192);
             button1.Font = new Font("Segoe UI", 12F, FontStyle.Bold, GraphicsUnit.Point);
-            button1.Location = new Point(241, 14);
+            button1.Location = new Point(305, 15);
             button1.Name = "button1";
             button1.Size = new Size(75, 41);
             button1.TabIndex = 1;
@@ -258,13 +268,16 @@
             label3.TabIndex = 0;
             label3.Text = "CCCD :";
             // 
-            // tbsophong
+            // label5
             // 
-            tbsophong.Font = new Font("Segoe UI", 15F, FontStyle.Regular, GraphicsUnit.Point);
-            tbsophong.Location = new Point(91, 17);
-            tbsophong.Name = "tbsophong";
-            tbsophong.Size = new Size(139, 34);
-            tbsophong.TabIndex = 5;
+            label5.AutoSize = true;
+            label5.BackColor = Color.FromArgb(255, 192, 192);
+            label5.Font = new Font("Segoe UI", 15F, FontStyle.Regular, GraphicsUnit.Point);
+            label5.Location = new Point(29, 21);
+            label5.Name = "label5";
+            label5.Size = new Size(107, 28);
+            label5.TabIndex = 6;
+            label5.Text = "Số phòng :";
             // 
             // danhsachkhachhang
             // 
@@ -319,5 +332,6 @@
         private Label label4;
         private TextBox sophong;
         private TextBox tbsophong;
+        private Label label5;
     }
 }

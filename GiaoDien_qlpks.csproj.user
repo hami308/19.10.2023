@@ -13,6 +13,9 @@
     <Compile Update="danhsachkhachhang.cs">
       <SubType>Form</SubType>
     </Compile>
+    <Compile Update="danhsachkhachhangcu.cs">
+      <SubType>Form</SubType>
+    </Compile>
     <Compile Update="Datsanpham.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -20,9 +23,6 @@
       <SubType>Form</SubType>
     </Compile>
     <Compile Update="formlogin.cs">
-      <SubType>Form</SubType>
-    </Compile>
-    <Compile Update="Hoadon.cs">
       <SubType>Form</SubType>
     </Compile>
     <Compile Update="quanlyphong.cs">

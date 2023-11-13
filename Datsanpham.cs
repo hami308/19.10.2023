@@ -58,6 +58,7 @@ namespace GiaoDien_qlpks
                 tbid.Text = "";
                 tbtensp.Text = "";
                 tbgia.Text = "";
+                tbtongtien.Text = "";
                 nbsoluong.Value = 0;
 
                 MessageBox.Show("Đặt sản phẩm thành công", "Thông báo");
@@ -92,6 +93,7 @@ namespace GiaoDien_qlpks
                 tbtensp.Text = row.Cells["TENSANPHAM"].Value.ToString();
                 tbgia.Text = row.Cells["DONGIA"].Value.ToString();
                 tbid.Text =row.Cells["IDSANPHAM"].Value.ToString();    
+                
             }
 
         }

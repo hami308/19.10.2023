@@ -31,7 +31,6 @@
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(checkout));
             tabControl1 = new TabControl();
             tabthanhtoan = new TabPage();
-            btnhoadon = new Button();
             panel4 = new Panel();
             tiensanpham = new TextBox();
             label8 = new Label();
@@ -75,7 +74,6 @@
             // tabthanhtoan
             // 
             tabthanhtoan.BackColor = Color.MistyRose;
-            tabthanhtoan.Controls.Add(btnhoadon);
             tabthanhtoan.Controls.Add(panel4);
             tabthanhtoan.Controls.Add(panel3);
             tabthanhtoan.Controls.Add(panel2);
@@ -89,18 +87,6 @@
             tabthanhtoan.TabIndex = 0;
             tabthanhtoan.Text = "Thanh toán";
             tabthanhtoan.Click += tabthanhtoan_Click;
-            // 
-            // btnhoadon
-            // 
-            btnhoadon.BackColor = Color.FromArgb(255, 128, 128);
-            btnhoadon.Font = new Font("Segoe UI", 13F, FontStyle.Bold, GraphicsUnit.Point);
-            btnhoadon.Location = new Point(434, 321);
-            btnhoadon.Name = "btnhoadon";
-            btnhoadon.Size = new Size(138, 50);
-            btnhoadon.TabIndex = 10;
-            btnhoadon.Text = "Xem hoá đơn";
-            btnhoadon.UseVisualStyleBackColor = false;
-            btnhoadon.Click += btnhoadon_Click;
             // 
             // panel4
             // 
@@ -120,6 +106,7 @@
             tiensanpham.Name = "tiensanpham";
             tiensanpham.Size = new Size(184, 31);
             tiensanpham.TabIndex = 1;
+            tiensanpham.TextChanged += tiensanpham_TextChanged;
             // 
             // label8
             // 
@@ -252,12 +239,13 @@
             // 
             Thanhtoan.BackColor = Color.FromArgb(255, 128, 128);
             Thanhtoan.Font = new Font("Segoe UI", 13F, FontStyle.Bold, GraphicsUnit.Point);
-            Thanhtoan.Location = new Point(187, 321);
+            Thanhtoan.Location = new Point(329, 318);
             Thanhtoan.Name = "Thanhtoan";
             Thanhtoan.Size = new Size(121, 50);
             Thanhtoan.TabIndex = 5;
             Thanhtoan.Text = "Thanh toán";
             Thanhtoan.UseVisualStyleBackColor = false;
+            Thanhtoan.Click += Thanhtoan_Click;
             // 
             // panel1
             // 
@@ -346,7 +334,6 @@
         private Label label4;
         private TextBox tbsongayluutru;
         private Label label5;
-        private Button btnhoadon;
         private Panel panel4;
         private TextBox tiensanpham;
         private Label label8;

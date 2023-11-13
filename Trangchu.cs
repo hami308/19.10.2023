@@ -37,10 +37,7 @@ namespace GiaoDien_qlpks
 
         private void DanhsachkhachhangToolStripMenuItem_Click(object sender, EventArgs e)
         {
-            Form danhsachkhachhang = new danhsachkhachhang();
-            this.Hide();
-            danhsachkhachhang.ShowDialog();
-            this.Show();
+
         }
 
         private void checkInToolStripMenuItem1_Click(object sender, EventArgs e)
@@ -95,6 +92,22 @@ namespace GiaoDien_qlpks
             Form Datsanpham = new Datsanpham();
             this.Hide();
             Datsanpham.ShowDialog();
+            this.Show();
+        }
+
+        private void danhSáchKháchHàngHiệnTạiToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            Form danhsachkhachhang = new danhsachkhachhang();
+            this.Hide();
+            danhsachkhachhang.ShowDialog();
+            this.Show();
+        }
+
+        private void danhSáchKháchHàngCũToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            Form danhsachkhachhangcu = new danhsachkhachhangcu();
+            this.Hide();
+            danhsachkhachhangcu.ShowDialog();
             this.Show();
         }
     }

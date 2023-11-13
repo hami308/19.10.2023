@@ -35,6 +35,8 @@
             DangxuatToolStripMenuItem = new ToolStripMenuItem();
             KhachhangToolStripMenuItem = new ToolStripMenuItem();
             DanhsachkhachhangToolStripMenuItem = new ToolStripMenuItem();
+            danhSáchKháchHàngHiệnTạiToolStripMenuItem = new ToolStripMenuItem();
+            danhSáchKháchHàngCũToolStripMenuItem = new ToolStripMenuItem();
             checkInToolStripMenuItem1 = new ToolStripMenuItem();
             checkOutToolStripMenuItem = new ToolStripMenuItem();
             QuanliphongToolStripMenuItem = new ToolStripMenuItem();
@@ -98,10 +100,25 @@
             // 
             // DanhsachkhachhangToolStripMenuItem
             // 
+            DanhsachkhachhangToolStripMenuItem.DropDownItems.AddRange(new ToolStripItem[] { danhSáchKháchHàngHiệnTạiToolStripMenuItem, danhSáchKháchHàngCũToolStripMenuItem });
             DanhsachkhachhangToolStripMenuItem.Name = "DanhsachkhachhangToolStripMenuItem";
             DanhsachkhachhangToolStripMenuItem.Size = new Size(262, 30);
             DanhsachkhachhangToolStripMenuItem.Text = "Danh sách khách hàng";
             DanhsachkhachhangToolStripMenuItem.Click += DanhsachkhachhangToolStripMenuItem_Click;
+            // 
+            // danhSáchKháchHàngHiệnTạiToolStripMenuItem
+            // 
+            danhSáchKháchHàngHiệnTạiToolStripMenuItem.Name = "danhSáchKháchHàngHiệnTạiToolStripMenuItem";
+            danhSáchKháchHàngHiệnTạiToolStripMenuItem.Size = new Size(324, 30);
+            danhSáchKháchHàngHiệnTạiToolStripMenuItem.Text = "Danh sách khách hàng hiện tại";
+            danhSáchKháchHàngHiệnTạiToolStripMenuItem.Click += danhSáchKháchHàngHiệnTạiToolStripMenuItem_Click;
+            // 
+            // danhSáchKháchHàngCũToolStripMenuItem
+            // 
+            danhSáchKháchHàngCũToolStripMenuItem.Name = "danhSáchKháchHàngCũToolStripMenuItem";
+            danhSáchKháchHàngCũToolStripMenuItem.Size = new Size(324, 30);
+            danhSáchKháchHàngCũToolStripMenuItem.Text = "Danh sách khách hàng cũ";
+            danhSáchKháchHàngCũToolStripMenuItem.Click += danhSáchKháchHàngCũToolStripMenuItem_Click;
             // 
             // checkInToolStripMenuItem1
             // 
@@ -182,5 +199,7 @@
         private ToolStripMenuItem dichvuToolStripMenuItem;
         private ToolStripMenuItem danhSáchCácDịchVụToolStripMenuItem;
         private ToolStripMenuItem đặtToolStripMenuItem;
+        private ToolStripMenuItem danhSáchKháchHàngHiệnTạiToolStripMenuItem;
+        private ToolStripMenuItem danhSáchKháchHàngCũToolStripMenuItem;
     }
 }

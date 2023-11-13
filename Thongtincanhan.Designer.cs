@@ -52,7 +52,7 @@
             // 
             // panel1
             // 
-            panel1.BackColor = SystemColors.ControlLight;
+            panel1.BackColor = Color.MistyRose;
             panel1.Controls.Add(panel3);
             panel1.Controls.Add(thoat);
             panel1.Controls.Add(capnhap);
@@ -99,8 +99,8 @@
             thoat.FlatAppearance.MouseDownBackColor = Color.Cyan;
             thoat.FlatAppearance.MouseOverBackColor = Color.Red;
             thoat.FlatStyle = FlatStyle.Flat;
-            thoat.Font = new Font("Segoe UI Variable Text Light", 12F, FontStyle.Bold | FontStyle.Italic, GraphicsUnit.Point);
-            thoat.Location = new Point(467, 375);
+            thoat.Font = new Font("Segoe UI Variable Text Light", 12F, FontStyle.Bold, GraphicsUnit.Point);
+            thoat.Location = new Point(467, 374);
             thoat.Name = "thoat";
             thoat.Size = new Size(98, 39);
             thoat.TabIndex = 6;
@@ -111,10 +111,12 @@
             // capnhap
             // 
             capnhap.BackColor = Color.FromArgb(255, 192, 192);
+            capnhap.FlatAppearance.BorderColor = Color.Black;
+            capnhap.FlatAppearance.BorderSize = 2;
             capnhap.FlatAppearance.MouseDownBackColor = Color.Cyan;
             capnhap.FlatAppearance.MouseOverBackColor = Color.Red;
             capnhap.FlatStyle = FlatStyle.Flat;
-            capnhap.Font = new Font("Segoe UI Variable Text Light", 12F, FontStyle.Bold | FontStyle.Italic, GraphicsUnit.Point);
+            capnhap.Font = new Font("Segoe UI Variable Text Light", 12F, FontStyle.Bold, GraphicsUnit.Point);
             capnhap.Location = new Point(283, 375);
             capnhap.Name = "capnhap";
             capnhap.Size = new Size(107, 39);
@@ -182,7 +184,7 @@
             // 
             // panel5
             // 
-            panel5.BackColor = Color.MistyRose;
+            panel5.BackColor = Color.LightCoral;
             panel5.Controls.Add(matkhaucu);
             panel5.Controls.Add(textBox2);
             panel5.Location = new Point(12, 108);

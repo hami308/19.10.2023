@@ -52,21 +52,21 @@ namespace GiaoDien_qlpks
                         string query = $"UPDATE [dbo].[Table_USER] SET PASSWORD = '{matkhaumoi}' WHERE USERNAME = '{tendangnhap}'";
                         provider.ExecuteQuery(query);
                         MessageBox.Show("Cập nhật mật khẩu thành công!");
-                      
+
                     }
                     else
                     {
-                        MessageBox.Show("Mật khẩu mới không khớp. Vui lòng nhập lại mật khẩu mới.","Thông báo");
+                        MessageBox.Show("Mật khẩu mới không khớp. Vui lòng nhập lại mật khẩu mới.", "Thông báo");
                     }
                 }
                 else
                 {
-                    MessageBox.Show("Mật khẩu cũ không đúng. Vui lòng nhập lại mật khẩu cũ.","Thông báo");
+                    MessageBox.Show("Mật khẩu cũ không đúng. Vui lòng nhập lại mật khẩu cũ.", "Thông báo");
                 }
             }
             else
             {
-                MessageBox.Show("Vui lòng điền đầy đủ thông tin!","Thông báo");
+                MessageBox.Show("Vui lòng điền đầy đủ thông tin!", "Thông báo");
             }
         }
 
