@@ -52,6 +52,9 @@
             tbmakhachhang = new TextBox();
             Timkiem = new Button();
             label2 = new Label();
+            panel5 = new Panel();
+            label6 = new Label();
+            dtgvsp = new DataGridView();
             tabControl1.SuspendLayout();
             tabthanhtoan.SuspendLayout();
             panel4.SuspendLayout();
@@ -59,6 +62,8 @@
             panel2.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)pictureBox1).BeginInit();
             panel1.SuspendLayout();
+            panel5.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)dtgvsp).BeginInit();
             SuspendLayout();
             // 
             // tabControl1
@@ -68,12 +73,13 @@
             tabControl1.Location = new Point(0, 4);
             tabControl1.Name = "tabControl1";
             tabControl1.SelectedIndex = 0;
-            tabControl1.Size = new Size(798, 440);
+            tabControl1.Size = new Size(806, 647);
             tabControl1.TabIndex = 0;
             // 
             // tabthanhtoan
             // 
             tabthanhtoan.BackColor = Color.MistyRose;
+            tabthanhtoan.Controls.Add(panel5);
             tabthanhtoan.Controls.Add(panel4);
             tabthanhtoan.Controls.Add(panel3);
             tabthanhtoan.Controls.Add(panel2);
@@ -83,7 +89,7 @@
             tabthanhtoan.Location = new Point(4, 32);
             tabthanhtoan.Name = "tabthanhtoan";
             tabthanhtoan.Padding = new Padding(3);
-            tabthanhtoan.Size = new Size(790, 404);
+            tabthanhtoan.Size = new Size(798, 611);
             tabthanhtoan.TabIndex = 0;
             tabthanhtoan.Text = "Thanh toán";
             tabthanhtoan.Click += tabthanhtoan_Click;
@@ -94,9 +100,9 @@
             panel4.Controls.Add(label8);
             panel4.Controls.Add(label7);
             panel4.Controls.Add(Tongtien);
-            panel4.Location = new Point(6, 231);
+            panel4.Location = new Point(5, 423);
             panel4.Name = "panel4";
-            panel4.Size = new Size(778, 55);
+            panel4.Size = new Size(778, 50);
             panel4.TabIndex = 9;
             panel4.Paint += panel4_Paint;
             // 
@@ -122,7 +128,7 @@
             label7.AutoSize = true;
             label7.BackColor = Color.MistyRose;
             label7.Font = new Font("Segoe UI", 17F, FontStyle.Bold, GraphicsUnit.Point);
-            label7.Location = new Point(450, 12);
+            label7.Location = new Point(450, 9);
             label7.Name = "label7";
             label7.Size = new Size(69, 31);
             label7.TabIndex = 3;
@@ -130,7 +136,7 @@
             // 
             // Tongtien
             // 
-            Tongtien.Location = new Point(536, 12);
+            Tongtien.Location = new Point(536, 11);
             Tongtien.Name = "Tongtien";
             Tongtien.Size = new Size(184, 31);
             Tongtien.TabIndex = 4;
@@ -228,9 +234,9 @@
             pictureBox1.Anchor = AnchorStyles.None;
             pictureBox1.Image = (Image)resources.GetObject("pictureBox1.Image");
             pictureBox1.InitialImage = null;
-            pictureBox1.Location = new Point(644, 291);
+            pictureBox1.Location = new Point(513, 493);
             pictureBox1.Name = "pictureBox1";
-            pictureBox1.Size = new Size(123, 106);
+            pictureBox1.Size = new Size(270, 114);
             pictureBox1.SizeMode = PictureBoxSizeMode.Zoom;
             pictureBox1.TabIndex = 6;
             pictureBox1.TabStop = false;
@@ -239,7 +245,7 @@
             // 
             Thanhtoan.BackColor = Color.FromArgb(255, 128, 128);
             Thanhtoan.Font = new Font("Segoe UI", 13F, FontStyle.Bold, GraphicsUnit.Point);
-            Thanhtoan.Location = new Point(329, 318);
+            Thanhtoan.Location = new Point(329, 517);
             Thanhtoan.Name = "Thanhtoan";
             Thanhtoan.Size = new Size(121, 50);
             Thanhtoan.TabIndex = 5;
@@ -253,7 +259,7 @@
             panel1.Controls.Add(tbmakhachhang);
             panel1.Controls.Add(Timkiem);
             panel1.Controls.Add(label2);
-            panel1.Location = new Point(9, 17);
+            panel1.Location = new Point(7, 17);
             panel1.Name = "panel1";
             panel1.Size = new Size(778, 59);
             panel1.TabIndex = 0;
@@ -291,11 +297,40 @@
             label2.Text = "Mã khách hàng";
             label2.Click += label2_Click;
             // 
+            // panel5
+            // 
+            panel5.Controls.Add(dtgvsp);
+            panel5.Controls.Add(label6);
+            panel5.Location = new Point(5, 220);
+            panel5.Name = "panel5";
+            panel5.Size = new Size(779, 197);
+            panel5.TabIndex = 10;
+            panel5.Paint += panel5_Paint;
+            // 
+            // label6
+            // 
+            label6.AutoSize = true;
+            label6.Location = new Point(281, 6);
+            label6.Name = "label6";
+            label6.Size = new Size(207, 25);
+            label6.TabIndex = 0;
+            label6.Text = "Danh sách các sản phẩm";
+            // 
+            // dtgvsp
+            // 
+            dtgvsp.BackgroundColor = Color.FromArgb(255, 192, 192);
+            dtgvsp.ColumnHeadersHeightSizeMode = DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            dtgvsp.Location = new Point(3, 34);
+            dtgvsp.Name = "dtgvsp";
+            dtgvsp.RowTemplate.Height = 25;
+            dtgvsp.Size = new Size(773, 160);
+            dtgvsp.TabIndex = 1;
+            // 
             // checkout
             // 
             AutoScaleDimensions = new SizeF(7F, 15F);
             AutoScaleMode = AutoScaleMode.Font;
-            ClientSize = new Size(800, 450);
+            ClientSize = new Size(809, 656);
             Controls.Add(tabControl1);
             Name = "checkout";
             StartPosition = FormStartPosition.CenterScreen;
@@ -311,6 +346,9 @@
             ((System.ComponentModel.ISupportInitialize)pictureBox1).EndInit();
             panel1.ResumeLayout(false);
             panel1.PerformLayout();
+            panel5.ResumeLayout(false);
+            panel5.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)dtgvsp).EndInit();
             ResumeLayout(false);
         }
 
@@ -339,5 +377,8 @@
         private Label label8;
         private TextBox tbmakhachhang;
         private TextBox tbsophong;
+        private Panel panel5;
+        private Label label6;
+        private DataGridView dtgvsp;
     }
 }

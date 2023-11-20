@@ -89,12 +89,12 @@ namespace GiaoDien_qlpks
                 if (reader.Read())
                 {
                     string? trangthai1 = reader["TRANGTHAI"].ToString();
-                    loaiphong.Text = reader["IDLOAIPHONG"].ToString();
+                    string? loaiphong1 = reader["IDLOAIPHONG"].ToString();
                     string? vesinhphong1 = reader["VESINHPHONG"].ToString();
-                    if (!string.IsNullOrEmpty(trangthai1) && !string.IsNullOrEmpty(vesinhphong1))
+                    if (!string.IsNullOrEmpty(trangthai1) && !string.IsNullOrEmpty(vesinhphong1) && ! string.IsNullOrEmpty(loaiphong1))
                     {
 
-                        if (trangthai1.Equals("FALSE", StringComparison.OrdinalIgnoreCase))
+                        if (trangthai1=="FALSE")
                         {
                             trangthai.Text = "PHÒNG ĐÃ ĐƯỢC ĐẶT";
                         }
@@ -118,6 +118,28 @@ namespace GiaoDien_qlpks
                         else
                         {
                             vesinhphong.Text = "VESINHPHONG KHÔNG XÁC ĐỊNH";
+                        }
+
+                        if (loaiphong1.Equals("1", StringComparison.OrdinalIgnoreCase))
+                        {
+                            loaiphong.Text = "PHÒNG ĐƠN (VIP)";
+                        }
+                        else if (loaiphong1.Equals("2", StringComparison.OrdinalIgnoreCase))
+                        {
+                            loaiphong.Text = "PHÒNG ĐƠN (THƯỜNG)";
+                        }
+                        else if (loaiphong1.Equals("3", StringComparison.OrdinalIgnoreCase))
+                        {
+                            loaiphong.Text = "PHÒNG ĐÔI (VIP)";
+                        }
+                        else if (loaiphong1.Equals("4", StringComparison.OrdinalIgnoreCase))
+                        {
+                            loaiphong.Text = "PHÒNG ĐÔI (THƯỜNG)";
+                        }
+
+                        else
+                        {
+                            loaiphong.Text = "LOAIPHONG KHÔNG XÁC ĐỊNH";
                         }
                     }
                 }

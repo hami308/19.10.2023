@@ -10,6 +10,7 @@ using System.Reflection;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
+using static System.ComponentModel.Design.ObjectSelectorEditor;
 
 namespace GiaoDien_qlpks
 {
@@ -55,7 +56,6 @@ namespace GiaoDien_qlpks
                 LEFT JOIN [dbo].[Table_DATSANPHAM] AS DSP ON DSP.MAKHACHHANG = KH.MAKHACHHANG
                 LEFT JOIN [dbo].[Table_SANPHAM] AS SPA ON SPA.IDSANPHAM = DSP.IDSANPHAM
                 WHERE KH.MAKHACHHANG = '{MKH}'";
-
             DataProvider provider = new DataProvider();
             double tongtienSanPham = 0;
 
@@ -70,7 +70,10 @@ namespace GiaoDien_qlpks
                     int songayluutru = Convert.ToInt32(tbsongayluutru.Text);
                     double tienphong = dongia * songayluutru;
                     tbtienphong.Text = tienphong.ToString();
-
+                    string querysp = @$"SELECT DSP.IDDATSANPHAM ,SP.TENSANPHAM,SP.DONGIA,DSP.SOLUONG,SP.DONGIA* DSP.SOLUONG AS TONG FROM[dbo].[Table_DATSANPHAM] DSP
+                    INNER JOIN [dbo].[Table_SANPHAM] AS SP ON SP.IDSANPHAM = DSP.IDSANPHAM
+                    WHERE MAKHACHHANG = '{MKH}' ";
+                    dtgvsp.DataSource = provider.ExecuteQuery(querysp);
                     if (reader["IDSANPHAM"] != DBNull.Value && reader["SOLUONG"] != DBNull.Value)
                     {
                         double gia = Convert.ToDouble(reader["GIA"].ToString());
@@ -85,6 +88,7 @@ namespace GiaoDien_qlpks
                 }
 
             }
+            
         }
 
         private void Tongtien_TextChanged(object sender, EventArgs e)
@@ -123,34 +127,34 @@ namespace GiaoDien_qlpks
         private void Thanhtoan_Click(object sender, EventArgs e)
         {
             try
-            {   
-                    string maKH = tbmakhachhang.Text;
-                    DataProvider provider = new DataProvider();
-                    string queryupdate = $"UPDATE [dbo].[Table_SOPHONG] SET TRANGTHAI=1 WHERE SOPHONG='{tbsophong.Text}'";
-                    provider.ExecuteQuery(queryupdate);
+            {
+                string maKH = tbmakhachhang.Text;
+                DataProvider provider = new DataProvider();
+                string queryupdate = $"UPDATE [dbo].[Table_SOPHONG] SET TRANGTHAI=1 WHERE SOPHONG='{tbsophong.Text}'";
+                provider.ExecuteQuery(queryupdate);
 
-                    string querychuyenKH = $@"INSERT INTO [dbo].[Table_KHACHHANGCU] (MAKHACHANG, TENKHACHHANG, SĐT,CCCD, SOPHONG, NGAYDAT, NGAYTRADUKIEN, NGAYTRATHUCTE)
+                string querychuyenKH = $@"INSERT INTO [dbo].[Table_KHACHHANGCU] (MAKHACHANG, TENKHACHHANG, SĐT,CCCD, SOPHONG, NGAYDAT, NGAYTRADUKIEN, NGAYTRATHUCTE)
                          SELECT KH.MAKHACHHANG, KH.TENKHACHHANG, KH.SĐT,KH.CCCD, KH.SOPHONG, DP.NGAYDAT, DP.NGAYTRADUKIEN, GETDATE() AS NGAYTRATHUCTE
                          FROM [dbo].[Table.KHACHHANG] AS KH
                          INNER JOIN [dbo].[Table_DATPHONG] AS DP ON KH.MAKHACHHANG = DP.MAKHACHHANG
                          WHERE KH.MAKHACHHANG = '{maKH}'";
 
-                    provider.ExecuteQuery(querychuyenKH);
-                    string query1 = $"DELETE FROM [dbo].[Table_DATSANPHAM] WHERE MAKHACHHANG ='{maKH}'";
-                    provider.ExecuteQuery(query1);
-                    string query2 = $"DELETE FROM [dbo].[Table_DATPHONG] WHERE MAKHACHHANG ='{maKH}'";
-                    provider.ExecuteQuery(query2);
-                    string queryxoaKH = $"DELETE FROM [dbo].[Table.KHACHHANG] WHERE MAKHACHHANG ='{maKH}'";
-                    provider.ExecuteQuery(queryxoaKH);
+                provider.ExecuteQuery(querychuyenKH);
+                string query1 = $"DELETE FROM [dbo].[Table_DATSANPHAM] WHERE MAKHACHHANG ='{maKH}'";
+                provider.ExecuteQuery(query1);
+                string query2 = $"DELETE FROM [dbo].[Table_DATPHONG] WHERE MAKHACHHANG ='{maKH}'";
+                provider.ExecuteQuery(query2);
+                string queryxoaKH = $"DELETE FROM [dbo].[Table.KHACHHANG] WHERE MAKHACHHANG ='{maKH}'";
+                provider.ExecuteQuery(queryxoaKH);
 
-                    MessageBox.Show("Thanh toán thành công !", "Thông báo");
-                    tbmakhachhang.Text = "";
-                    tbtenkhachhang.Text = "";
-                    tbsophong.Text = "";
-                    tbtienphong.Text = "";
-                    tiensanpham.Text = "";
-                    Tongtien.Text = "";
-                    tbsongayluutru.Text = "";
+                MessageBox.Show("Thanh toán thành công !", "Thông báo");
+                tbmakhachhang.Text = "";
+                tbtenkhachhang.Text = "";
+                tbsophong.Text = "";
+                tbtienphong.Text = "";
+                tiensanpham.Text = "";
+                Tongtien.Text = "";
+                tbsongayluutru.Text = "";
             }
             catch (Exception ex)
             {
@@ -158,5 +162,9 @@ namespace GiaoDien_qlpks
             }
         }
 
+        private void panel5_Paint(object sender, PaintEventArgs e)
+        {
+
+        }
     }
 }

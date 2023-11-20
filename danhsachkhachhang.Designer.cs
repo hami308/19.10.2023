@@ -29,6 +29,7 @@
         private void InitializeComponent()
         {
             panel1 = new Panel();
+            label5 = new Label();
             tbsophong = new TextBox();
             dataGridView1 = new DataGridView();
             button1 = new Button();
@@ -49,7 +50,6 @@
             panel6 = new Panel();
             tbcccd = new TextBox();
             label3 = new Label();
-            label5 = new Label();
             panel1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)dataGridView1).BeginInit();
             panel2.SuspendLayout();
@@ -72,6 +72,17 @@
             panel1.Size = new Size(404, 422);
             panel1.TabIndex = 0;
             // 
+            // label5
+            // 
+            label5.AutoSize = true;
+            label5.BackColor = Color.FromArgb(255, 192, 192);
+            label5.Font = new Font("Segoe UI", 15F, FontStyle.Regular, GraphicsUnit.Point);
+            label5.Location = new Point(29, 21);
+            label5.Name = "label5";
+            label5.Size = new Size(107, 28);
+            label5.TabIndex = 6;
+            label5.Text = "Số phòng :";
+            // 
             // tbsophong
             // 
             tbsophong.Font = new Font("Segoe UI", 15F, FontStyle.Regular, GraphicsUnit.Point);
@@ -82,6 +93,7 @@
             // 
             // dataGridView1
             // 
+            dataGridView1.BackgroundColor = Color.FromArgb(255, 192, 192);
             dataGridView1.ColumnHeadersHeightSizeMode = DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             dataGridView1.Location = new Point(0, 66);
             dataGridView1.Name = "dataGridView1";
@@ -267,17 +279,6 @@
             label3.Size = new Size(58, 21);
             label3.TabIndex = 0;
             label3.Text = "CCCD :";
-            // 
-            // label5
-            // 
-            label5.AutoSize = true;
-            label5.BackColor = Color.FromArgb(255, 192, 192);
-            label5.Font = new Font("Segoe UI", 15F, FontStyle.Regular, GraphicsUnit.Point);
-            label5.Location = new Point(29, 21);
-            label5.Name = "label5";
-            label5.Size = new Size(107, 28);
-            label5.TabIndex = 6;
-            label5.Text = "Số phòng :";
             // 
             // danhsachkhachhang
             // 

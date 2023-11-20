@@ -37,6 +37,7 @@
             // 
             // dtgvkhcu
             // 
+            dtgvkhcu.BackgroundColor = Color.FromArgb(255, 192, 192);
             dtgvkhcu.ColumnHeadersHeightSizeMode = DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             dtgvkhcu.Location = new Point(12, 77);
             dtgvkhcu.Name = "dtgvkhcu";

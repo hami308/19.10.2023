@@ -29,6 +29,9 @@
         private void InitializeComponent()
         {
             panel1 = new Panel();
+            panel8 = new Panel();
+            label6 = new Label();
+            tbid = new TextBox();
             panel7 = new Panel();
             label5 = new Label();
             tbgia = new TextBox();
@@ -49,10 +52,8 @@
             panel2 = new Panel();
             tbmkh = new TextBox();
             label1 = new Label();
-            panel8 = new Panel();
-            label6 = new Label();
-            tbid = new TextBox();
             panel1.SuspendLayout();
+            panel8.SuspendLayout();
             panel7.SuspendLayout();
             panel6.SuspendLayout();
             panel5.SuspendLayout();
@@ -61,7 +62,6 @@
             panel3.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)dataGridView1).BeginInit();
             panel2.SuspendLayout();
-            panel8.SuspendLayout();
             SuspendLayout();
             // 
             // panel1
@@ -82,6 +82,35 @@
             panel1.Size = new Size(798, 439);
             panel1.TabIndex = 0;
             panel1.Paint += panel1_Paint;
+            // 
+            // panel8
+            // 
+            panel8.BackColor = Color.FromArgb(255, 192, 192);
+            panel8.Controls.Add(label6);
+            panel8.Controls.Add(tbid);
+            panel8.Location = new Point(389, 93);
+            panel8.Name = "panel8";
+            panel8.Size = new Size(405, 49);
+            panel8.TabIndex = 8;
+            // 
+            // label6
+            // 
+            label6.AutoSize = true;
+            label6.BackColor = Color.FromArgb(255, 128, 128);
+            label6.Font = new Font("Segoe UI", 15F, FontStyle.Regular, GraphicsUnit.Point);
+            label6.Location = new Point(30, 11);
+            label6.Name = "label6";
+            label6.Size = new Size(120, 28);
+            label6.TabIndex = 3;
+            label6.Text = "ID sản phẩm";
+            // 
+            // tbid
+            // 
+            tbid.Font = new Font("Segoe UI", 15F, FontStyle.Regular, GraphicsUnit.Point);
+            tbid.Location = new Point(186, 8);
+            tbid.Name = "tbid";
+            tbid.Size = new Size(162, 34);
+            tbid.TabIndex = 2;
             // 
             // panel7
             // 
@@ -124,7 +153,7 @@
             // 
             // btntim
             // 
-            btntim.BackColor = Color.Silver;
+            btntim.BackColor = Color.FromArgb(255, 128, 128);
             btntim.Font = new Font("Segoe UI", 15F, FontStyle.Regular, GraphicsUnit.Point);
             btntim.Location = new Point(247, 7);
             btntim.Name = "btntim";
@@ -245,6 +274,7 @@
             // 
             // dataGridView1
             // 
+            dataGridView1.BackgroundColor = Color.FromArgb(255, 192, 192);
             dataGridView1.ColumnHeadersHeightSizeMode = DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             dataGridView1.Location = new Point(12, 83);
             dataGridView1.Name = "dataGridView1";
@@ -285,35 +315,6 @@
             label1.Text = "Mã khách hàng";
             label1.Click += label1_Click;
             // 
-            // panel8
-            // 
-            panel8.BackColor = Color.FromArgb(255, 192, 192);
-            panel8.Controls.Add(label6);
-            panel8.Controls.Add(tbid);
-            panel8.Location = new Point(389, 93);
-            panel8.Name = "panel8";
-            panel8.Size = new Size(405, 49);
-            panel8.TabIndex = 8;
-            // 
-            // label6
-            // 
-            label6.AutoSize = true;
-            label6.BackColor = Color.FromArgb(255, 128, 128);
-            label6.Font = new Font("Segoe UI", 15F, FontStyle.Regular, GraphicsUnit.Point);
-            label6.Location = new Point(30, 11);
-            label6.Name = "label6";
-            label6.Size = new Size(120, 28);
-            label6.TabIndex = 3;
-            label6.Text = "ID sản phẩm";
-            // 
-            // tbid
-            // 
-            tbid.Font = new Font("Segoe UI", 15F, FontStyle.Regular, GraphicsUnit.Point);
-            tbid.Location = new Point(186, 8);
-            tbid.Name = "tbid";
-            tbid.Size = new Size(162, 34);
-            tbid.TabIndex = 2;
-            // 
             // Datsanpham
             // 
             AutoScaleDimensions = new SizeF(7F, 15F);
@@ -324,6 +325,8 @@
             StartPosition = FormStartPosition.CenterScreen;
             Text = "Đặt sản phẩm";
             panel1.ResumeLayout(false);
+            panel8.ResumeLayout(false);
+            panel8.PerformLayout();
             panel7.ResumeLayout(false);
             panel7.PerformLayout();
             panel6.ResumeLayout(false);
@@ -338,8 +341,6 @@
             ((System.ComponentModel.ISupportInitialize)dataGridView1).EndInit();
             panel2.ResumeLayout(false);
             panel2.PerformLayout();
-            panel8.ResumeLayout(false);
-            panel8.PerformLayout();
             ResumeLayout(false);
         }
 

@@ -61,13 +61,7 @@ namespace GiaoDien_qlpks
             this.Show();
         }
 
-        private void doanhThuToolStripMenuItem_Click(object sender, EventArgs e)
-        {
-            Form Baocao = new Baocao();
-            this.Hide();
-            Baocao.ShowDialog();
-            this.Show();
-        }
+       
 
         private void DangxuatToolStripMenuItem_Click(object sender, EventArgs e)
         {

@@ -48,7 +48,7 @@ namespace GiaoDien_qlpks
 
         private void btndat_Click(object sender, EventArgs e)
         {
-            if (!string.IsNullOrEmpty(tbmkh.Text) && !string.IsNullOrEmpty(tbid.Text) && nbsoluong.Value!=0)
+            if (!string.IsNullOrEmpty(tbmkh.Text) && !string.IsNullOrEmpty(tbid.Text) && nbsoluong.Value != 0)
             {
                 string query = $"INSERT INTO [dbo].[Table_DATSANPHAM] (MAKHACHHANG, IDSANPHAM, SOLUONG) VALUES ('{tbmkh.Text}', '{tbid.Text}', {nbsoluong.Value})";
 
@@ -92,8 +92,8 @@ namespace GiaoDien_qlpks
                 DataGridViewRow row = dataGridView1.Rows[e.RowIndex];
                 tbtensp.Text = row.Cells["TENSANPHAM"].Value.ToString();
                 tbgia.Text = row.Cells["DONGIA"].Value.ToString();
-                tbid.Text =row.Cells["IDSANPHAM"].Value.ToString();    
-                
+                tbid.Text = row.Cells["IDSANPHAM"].Value.ToString();
+
             }
 
         }

@@ -68,6 +68,7 @@
             // 
             // dtgvdichvu
             // 
+            dtgvdichvu.BackgroundColor = Color.FromArgb(255, 192, 192);
             dtgvdichvu.ColumnHeadersHeightSizeMode = DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             dtgvdichvu.Location = new Point(3, 37);
             dtgvdichvu.Name = "dtgvdichvu";
