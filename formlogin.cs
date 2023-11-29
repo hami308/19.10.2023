@@ -50,7 +50,8 @@ namespace GiaoDien_qlpks
             {
                 // Kiểm tra mật khẩu 
                 DataProvider provider = new DataProvider();
-                if (provider.CheckLogin(tendangnhap, matkhau))
+                string query = $"SELECT COUNT(*) FROM [dbo].[Table_USER] WHERE USERNAME = '{tendangnhap}' AND PASSWORD = '{matkhau}'";
+                if (provider.Kiemtra(query))
                 {
                     MessageBox.Show(" Đăng nhập thành công !", "Thông báo");
                     Form Trangchu = new Trangchu(tendangnhap);

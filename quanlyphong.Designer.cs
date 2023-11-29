@@ -272,6 +272,7 @@
             // 
             // dtgvdanhsachphong
             // 
+            dtgvdanhsachphong.BackgroundColor = Color.MistyRose;
             dataGridViewCellStyle1.Alignment = DataGridViewContentAlignment.MiddleLeft;
             dataGridViewCellStyle1.BackColor = SystemColors.Control;
             dataGridViewCellStyle1.Font = new Font("Segoe UI", 9F, FontStyle.Regular, GraphicsUnit.Point);

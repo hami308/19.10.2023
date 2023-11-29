@@ -9,6 +9,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
+using static System.Windows.Forms.VisualStyles.VisualStyleElement;
 
 namespace GiaoDien_qlpks
 {
@@ -18,7 +19,6 @@ namespace GiaoDien_qlpks
         {
             InitializeComponent();
             loaddichvulist();
-
         }
         void loaddichvulist()
         {
@@ -50,18 +50,27 @@ namespace GiaoDien_qlpks
         {
             if (!string.IsNullOrEmpty(tbmkh.Text) && !string.IsNullOrEmpty(tbid.Text) && nbsoluong.Value != 0)
             {
-                string query = $"INSERT INTO [dbo].[Table_DATSANPHAM] (MAKHACHHANG, IDSANPHAM, SOLUONG) VALUES ('{tbmkh.Text}', '{tbid.Text}', {nbsoluong.Value})";
-
                 DataProvider provider = new DataProvider();
-                provider.ExecuteQuery(query);
-                tbmkh.Text = "";
-                tbid.Text = "";
-                tbtensp.Text = "";
-                tbgia.Text = "";
-                tbtongtien.Text = "";
-                nbsoluong.Value = 0;
+                string query1 = $"SELECT COUNT(*) FROM [dbo].[Table.KHACHHANG] WHERE MAKHACHHANG='{tbmkh.Text}'";
+                if (provider.Kiemtra(query1))
+                {
 
-                MessageBox.Show("Đặt sản phẩm thành công", "Thông báo");
+                    string query = $"INSERT INTO [dbo].[Table_DATSANPHAM] (MAKHACHHANG, IDSANPHAM, SOLUONG) VALUES ('{tbmkh.Text}', '{tbid.Text}', {nbsoluong.Value})";
+
+                    provider.ExecuteQuery(query);
+                    tbmkh.Text = "";
+                    tbid.Text = "";
+                    tbtensp.Text = "";
+                    tbgia.Text = "";
+                    tbtongtien.Text = "";
+                    nbsoluong.Value = 0;
+
+                    MessageBox.Show("Đặt sản phẩm thành công", "Thông báo");
+                }
+                else
+                {
+                    MessageBox.Show("Không tồn tại mã khách hàng này!", "Thông báo!");
+                }
             }
             else
             {
@@ -75,13 +84,20 @@ namespace GiaoDien_qlpks
 
         private void btntim_Click(object sender, EventArgs e)
         {
-
-            string query = $"SELECT * FROM [dbo].[Table_SANPHAM] WHERE TENSANPHAM='{tbtim.Text}'";
             DataProvider provider = new DataProvider();
-            dataGridView1.DataSource = provider.ExecuteQuery(query);
-            if (string.IsNullOrEmpty(tbtim.Text))
+            string query1 = $"SELECT COUNT(*) FROM [dbo].[Table_SANPHAM] WHERE TENSANPHAM='{tbtim.Text}'";
+            if (provider.Kiemtra(query1))
             {
-                loaddichvulist();
+                string query = $"SELECT * FROM [dbo].[Table_SANPHAM] WHERE TENSANPHAM='{tbtim.Text}'";
+                dataGridView1.DataSource = provider.ExecuteQuery(query);
+                if (string.IsNullOrEmpty(tbtim.Text))
+                {
+                    loaddichvulist();
+                }
+            }
+            else
+            {
+                MessageBox.Show("Không tìm thấy sản phẩm này!", "Thông báo!");
             }
         }
 

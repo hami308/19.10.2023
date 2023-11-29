@@ -91,10 +91,10 @@ namespace GiaoDien_qlpks
                     string? trangthai1 = reader["TRANGTHAI"].ToString();
                     string? loaiphong1 = reader["IDLOAIPHONG"].ToString();
                     string? vesinhphong1 = reader["VESINHPHONG"].ToString();
-                    if (!string.IsNullOrEmpty(trangthai1) && !string.IsNullOrEmpty(vesinhphong1) && ! string.IsNullOrEmpty(loaiphong1))
+                    if (!string.IsNullOrEmpty(trangthai1) && !string.IsNullOrEmpty(vesinhphong1) && !string.IsNullOrEmpty(loaiphong1))
                     {
 
-                        if (trangthai1=="FALSE")
+                        if (trangthai1 == "FALSE")
                         {
                             trangthai.Text = "PHÒNG ĐÃ ĐƯỢC ĐẶT";
                         }

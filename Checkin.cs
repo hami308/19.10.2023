@@ -59,7 +59,7 @@ namespace GiaoDien_qlpks
                     int sophong = (int)cbsophong.SelectedValue;
                     DataProvider provider = new DataProvider();
                     string insertKhachHangQuery = $"INSERT INTO [dbo].[Table.KHACHHANG] (TENKHACHHANG, SĐT, CCCD, SOPHONG) OUTPUT INSERTED.MAKHACHHANG VALUES ('{tbten.Text}', '{tbsđt.Text}', '{tbcccd.Text}', '{sophong}')";
-                    int MaKhachHang = Convert.ToInt32(provider.ExecuteScalar(insertKhachHangQuery));
+                    int MaKhachHang = provider.GetIdentity(insertKhachHangQuery);
                     string ngayDatFormatted = ngaydat.Value.ToString("yyyy-MM-dd");
                     string ngayTraFormatted = ngaytra.Value.ToString("yyyy-MM-dd");
                     string insertDatphongQuery = $"INSERT INTO [dbo].[Table_DATPHONG] (MAKHACHHANG, NGAYDAT, NGAYTRADUKIEN) VALUES ('{MaKhachHang}', '{ngayDatFormatted}', '{ngayTraFormatted}')";

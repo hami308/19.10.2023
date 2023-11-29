@@ -119,7 +119,7 @@
             // 
             chinhsua.BackColor = Color.FromArgb(255, 128, 128);
             chinhsua.Font = new Font("Segoe UI", 12F, FontStyle.Bold, GraphicsUnit.Point);
-            chinhsua.Location = new Point(140, 5);
+            chinhsua.Location = new Point(140, 15);
             chinhsua.Name = "chinhsua";
             chinhsua.Size = new Size(100, 42);
             chinhsua.TabIndex = 1;

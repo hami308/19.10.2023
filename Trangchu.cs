@@ -54,8 +54,7 @@ namespace GiaoDien_qlpks
         }
 
         private void checkOutToolStripMenuItem_Click(object sender, EventArgs e)
-        {
-            Form checkout = new checkout();
+        {   Form checkout = new checkout();
             this.Hide();
             checkout.ShowDialog();
             this.Show();

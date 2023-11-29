@@ -93,10 +93,18 @@ namespace GiaoDien_qlpks
 
         private void button1_Click(object sender, EventArgs e)
         {
-            string query = $"SELECT * FROM [dbo].[Table.KHACHHANG] WHERE SOPHONG='{tbsophong.Text}'";
             DataProvider provider = new DataProvider();
-            dataGridView1.DataSource = provider.ExecuteQuery(query);
+            string query = $"SELECT COUNT(*) FROM [dbo].[Table.KHACHHANG] WHERE SOPHONG ='{tbsophong.Text}'";
+            if (provider.Kiemtra(query))
+            {
 
+                string query1 = $"SELECT * FROM [dbo].[Table.KHACHHANG] WHERE SOPHONG='{tbsophong.Text}'";
+                dataGridView1.DataSource = provider.ExecuteQuery(query1);
+            }
+            else
+            {
+                MessageBox.Show("Không tìm thấy số phòng hợp lệ!", "Thông báo!");
+            }
         }
     }
 }

@@ -45,13 +45,15 @@ namespace GiaoDien_qlpks
             if (!string.IsNullOrEmpty(tendangnhap) && !string.IsNullOrEmpty(matkhaucu) && !string.IsNullOrEmpty(matkhaumoi) && !string.IsNullOrEmpty(nhaplaimatkhau))
             {
                 DataProvider provider = new DataProvider();
-                if (provider.CheckLogin(tendangnhap, matkhaucu))
+                string query = $"SELECT COUNT(*) FROM [dbo].[Table_USER] WHERE USERNAME = '{tendangnhap}' AND PASSWORD = '{matkhaucu}'";
+
+                if (provider.Kiemtra(query))
                 {
                     if (matkhaumoi == nhaplaimatkhau)
                     {
-                        string query = $"UPDATE [dbo].[Table_USER] SET PASSWORD = '{matkhaumoi}' WHERE USERNAME = '{tendangnhap}'";
-                        provider.ExecuteQuery(query);
-                        MessageBox.Show("Cập nhật mật khẩu thành công!");
+                        string queryupdate = $"UPDATE [dbo].[Table_USER] SET PASSWORD = '{matkhaumoi}' WHERE USERNAME = '{tendangnhap}'";
+                        provider.ExecuteQuery(queryupdate);
+                        MessageBox.Show("Cập nhật mật khẩu thành công!","Thông báo!");
 
                     }
                     else

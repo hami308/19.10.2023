@@ -20,7 +20,7 @@ namespace GiaoDien_qlpks
             InitializeComponent();
             loaddichvulist();
         }
-        void loaddichvulist()
+         void loaddichvulist()
         {
             string query = "SELECT * FROM [dbo].[Table_SANPHAM]";
             DataProvider provider = new DataProvider();
@@ -92,25 +92,31 @@ namespace GiaoDien_qlpks
                 dongia.Text = row.Cells["DONGIA"].Value.ToString();
             }
         }
-
+        
         private void Them_Click(object sender, EventArgs e)
         {
 
             if (!string.IsNullOrEmpty(tensanpham.Text) && !string.IsNullOrEmpty(dongia.Text))
             {
+                DataProvider provider = new DataProvider();
                 string tensp = tensanpham.Text;
                 string gia = dongia.Text;
+                string query = $"SELECT COUNT(*) FROM [dbo].[Table_SANPHAM] WHERE TENSANPHAM ='{tensp}'";
+                if (!provider.Kiemtra(query))
+                {
+                    string queryinsert = $"INSERT INTO [dbo].[Table_SANPHAM] (TENSANPHAM, DONGIA) VALUES ('{tensp}', '{gia}')";
+                    provider.ExecuteQuery(queryinsert);
 
+                    loaddichvulist();
 
-                string query = $"INSERT INTO [dbo].[Table_SANPHAM] (TENSANPHAM, DONGIA) VALUES ('{tensp}', '{gia}')";
+                    tensanpham.Text = "";
+                    dongia.Text = "";
+                } 
+                else
+                {
+                    MessageBox.Show("Sản phẩm đã tồn tại!", "Thông báo !");
+                }
 
-                DataProvider provider = new DataProvider();
-                provider.ExecuteQuery(query);
-
-                loaddichvulist();
-
-                tensanpham.Text = "";
-                dongia.Text = "";
             }
             else
             {
